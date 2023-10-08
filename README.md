@@ -1,13 +1,5 @@
 # privateGPT
 
-Ask questions to your documents without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest documents and ask questions without an internet connection!
-
-Built with [LangChain](https://github.com/hwchase17/langchain), [GPT4All](https://github.com/nomic-ai/gpt4all), [LlamaCpp](https://github.com/ggerganov/llama.cpp), [Chroma](https://www.trychroma.com/) and [SentenceTransformers](https://www.sbert.net/).
-
-<img width="902" alt="demo" src="https://user-images.githubusercontent.com/721666/236942256-985801c9-25b9-48ef-80be-3acbb4575164.png">
-
-# Environment Setup
-
 In order to set your environment up to run the code here, first install all requirements:
 
 ```shell
@@ -16,7 +8,7 @@ pip3 install -r requirements.txt
 
 Then, download the LLM model and place it in a directory of your choice:
 
-- LLM: default to [ggml-gpt4all-j-v1.3-groovy.bin](https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin). If you prefer a different GPT4All-J compatible model, just download it and reference it in your `.env` file.
+- LLM: default to [ggml-model-q4_0.bin](https://huggingface.co/Jamacio/ggml-model-q4_0). If you prefer a different GPT4All-J compatible model, just download it and reference it in your `.env` file.
 
 Copy the `example.env` template into `.env`
 
@@ -37,10 +29,6 @@ TARGET_SOURCE_CHUNKS: The amount of chunks (sources) that will be used to answer
 ```
 
 Note: because of the way `langchain` loads the `SentenceTransformers` embeddings, the first time you run the script it will require internet connection to download the embeddings model itself.
-
-## Test dataset
-
-This repo uses a [state of the union transcript](https://github.com/imartinez/privateGPT/blob/main/source_documents/state_of_the_union.txt) as an example.
 
 ## Instructions for ingesting your own dataset
 
